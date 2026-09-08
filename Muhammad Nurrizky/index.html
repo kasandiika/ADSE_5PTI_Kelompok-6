@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Muhammad Nurrizky — Portfolio</title>
+    <meta name="description" content="Portfolio Muhammad Nurrizky — Informatics Engineering Student" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="top" role="banner">
+            <div class="brand">
+                <div class="avatar" aria-hidden="true">MN</div>
+                <div class="who">
+                    <h1 style="color: white;">MUHAMMAD NURRIZKY</h1>
+                    <p class="role">Informatics Engineering Student</p>
+                </div>
+            </div>
+
+            <nav class="topnav" role="navigation" aria-label="Main navigation">
+                <a class="navlink" href="#about">About</a>
+                <a class="navlink" href="#projects">Projects</a>
+                <a class="navlink" href="#education">Education</a>
+                <a class="navlink" href="#skills">Skills</a>
+                <a class="navlink" href="#contact">Contact</a>
+                <a class="btn" id="download" href="114 - Muhammad Nurrizky.pdf" download>Download Resume</a>
+
+            </nav>
+        </header>
+
+        <main class="main" role="main">
+            <aside class="sidebar" aria-labelledby="about-heading">
+                <section class="card" id="about">
+                    <h2 id="about-heading">Tentang</h2>
+                    <p class="muted">Mahasiswa Teknik Informatika di Universitas Islam Negeri Jakarta, berminat pada
+                        pengembangan web dan sedang mempelajari teknologi front-end seperti JavaScript.</p>
+                </section>
+
+                <section class="card" id="contact">
+                    <h3>Contact</h3>
+                    <ul class="kv" aria-label="Contact details">
+                        <li><strong>Phone:</strong> +62 819-3296-6780</li>
+                        <li><strong>Email:</strong> <a class="muted-link"
+                                href="mailto:mnurrizky68@gmail.com">mnurrizky68@gmail.com</a></li>
+                        <li><strong>Location:</strong> Serpong Utara, Tangerang Selatan</li>
+                    </ul>
+                </section>
+
+                <section class="card" id="cert">
+                    <h3>Certificate</h3>
+                    <ul class="kv">
+                        <li>Cisco Python Essentials — 2024</li>
+                        <li>HUAWEI ICT Academy — 2025</li>
+                        <li>CCNA Network — 2025</li>
+                    </ul>
+                </section>
+
+                <section class="card" id="lang">
+                    <h3>Language</h3>
+                    <ul class="kv">
+                        <li>Indonesia — Native</li>
+                        <li>English — Basic</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <section class="content" aria-live="polite">
+                <article class="card">
+                    <h2 class="section">Summary</h2>
+                    <p class="muted">Informatics Engineering student at Universitas Islam Negeri Jakarta with an
+                        interest in web development, currently learning web development technologies such as JavaScript.
+                    </p>
+                </article>
+
+                <article class="card" id="projects">
+                    <h2 class="section">Projects</h2>
+                    <div class="projects">
+                        <div class="project">
+                            <h3>Website: Eatenly</h3>
+                            <p class="muted">2025 — Website sederhana untuk restoran (landing, menu, pemesanan).</p>
+                            <div class="actions">
+                                <button class="btn" data-project="eatenly">Detail</button>
+
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <h3>Personal Resume</h3>
+                            <p class="muted">Versi web + PDF dari resume (file PDF tersedia untuk diunduh).</p>
+                            <div class="actions">
+                                <button class="btn" data-project="resume">Detail</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" id="education">
+                    <h2 class="section">Education</h2>
+                    <p><strong>UNIVERSITAS ISLAM NEGERI SYARIF HIDAYATULLAH JAKARTA</strong></p>
+                    <p class="muted">Bachelor of Computer Science — 2024 - Present</p>
+                </article>
+
+                <article class="card" id="skills">
+                    <h2 class="section">Skills</h2>
+                    <div class="badges" aria-hidden="true">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Java</span>
+                        <span class="badge">Python</span>
+                    </div>
+
+                    <div class="skill-list" aria-label="Skill levels">
+                        <div class="skill">
+                            <div class="label"><span>HTML</span><span class="muted">75%</span></div>
+                            <div class="bar"><i data-value="75" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="skill">
+                            <div class="label"><span>CSS</span><span class="muted">70%</span></div>
+                            <div class="bar"><i data-value="70" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="skill">
+                            <div class="label"><span>JavaScript</span><span class="muted">55%</span></div>
+                            <div class="bar"><i data-value="55" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2 class="section">More</h2>
+                    <p class="muted">Phone: +62 819-3296-6780 • Email: <a class="muted-link"
+                            href="mailto:mnurrizky68@gmail.com">mnurrizky68@gmail.com</a></p>
+                </article>
+
+                <footer class="foot">Created by <strong>Muhammad Nurrizky</strong></footer>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-backdrop hidden" id="modal" role="dialog" aria-hidden="true">
+        <div class="modal" role="document" aria-modal="true">
+            <button class="close" id="modalClose" aria-label="Close">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

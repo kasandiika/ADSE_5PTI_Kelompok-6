@@ -1,0 +1,324 @@
+/* Palette (light by default). Dark mode overrides via body.dark */
+:root {
+  --bg: #f6efe4; /* cream */
+  --surface: #ffffff;
+  --surface-alt: #fbfbfb;
+  --text: #0b0b0b;
+  --muted: #7b7b7b;
+  --accent: #16a34a; /* green */
+  --accent-2: #059669;
+  --glass: rgba(11, 11, 11, 0.06);
+  --header-start: rgba(11, 11, 11, 0.9);
+  --header-end: rgba(20, 20, 20, 0.9);
+  --radius: 12px;
+  --maxw: 1100px;
+  --shadow: 0 12px 30px rgba(11, 11, 11, 0.06);
+  --avatar-grad-from: var(--accent);
+  --avatar-grad-to: var(--accent-2);
+  color-scheme: light;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
+}
+
+/* Dark theme: consistent overrides to avoid clashing */
+body.dark {
+  --bg: #0b0f12;
+  --surface: #0f1720;
+  --surface-alt: #07121a;
+  --text: #f6efe4;
+  --muted: #98a0aa;
+  --accent: #34d399;
+  --accent-2: #22c55e;
+  --glass: rgba(255, 255, 255, 0.06);
+  --header-start: rgba(6, 10, 12, 0.95);
+  --header-end: rgba(10, 17, 20, 0.95);
+  --avatar-grad-from: #059669;
+  --avatar-grad-to: #10b981;
+  color-scheme: dark;
+}
+
+/* Base reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), var(--surface-alt));
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.wrap {
+  max-width: var(--maxw);
+  margin: 28px auto;
+  padding: 18px;
+}
+
+/* Header */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  background: linear-gradient(90deg, var(--header-start), var(--header-end));
+  color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--avatar-grad-from), var(--avatar-grad-to));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--surface);
+  font-size: 20px;
+}
+.who h1 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.who p {
+  margin: 6px 0 0 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+/* Nav */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.topnav .navlink {
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--surface);
+}
+.topnav .navlink:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--surface);
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--glass);
+  color: var(--surface);
+}
+
+/* Main layout */
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+@media (max-width: 880px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--glass);
+  box-shadow: 0 8px 22px rgba(11, 11, 11, 0.04);
+  color: var(--text);
+}
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.kv {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.kv li {
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.04);
+}
+body.dark .kv li {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+}
+.kv li:last-child {
+  border-bottom: 0;
+}
+
+/* Badges and projects */
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 700;
+  font-size: 0.84rem;
+  background: transparent;
+  color: var(--text);
+  margin: 6px 6px 0 0;
+}
+body.dark .badge {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 880px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+.project {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 11, 11, 0.04);
+  background: linear-gradient(180deg, var(--surface), var(--surface-alt));
+}
+body.dark .project {
+  border-color: rgba(255, 255, 255, 0.04);
+}
+.project h3 {
+  margin: 0;
+}
+.project p {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+}
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Skills bars */
+.skill {
+  margin-bottom: 12px;
+}
+.label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+.bar {
+  height: 10px;
+  background: rgba(11, 11, 11, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+body.dark .bar {
+  background: rgba(255, 255, 255, 0.06);
+}
+.bar > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  transition: width 900ms cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 11, 11, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 80;
+}
+.modal {
+  width: 100%;
+  max-width: 720px;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--glass);
+  box-shadow: 0 30px 60px rgba(11, 11, 11, 0.35);
+  color: var(--text);
+}
+.close {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--muted);
+}
+.hidden {
+  display: none;
+}
+
+/* Footer */
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 12px;
+}
+
+/* Print adjustments */
+@media print {
+  nav,
+  .btn,
+  .actions,
+  .modal-backdrop {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  .wrap {
+    max-width: 100%;
+    padding: 0;
+  }
+}
